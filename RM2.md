@@ -134,25 +134,13 @@ Data originates from Kaggle. 20,000+ rows and 20+ columns. CSV formatted.
 </tr>
 </table><br/><br/>Notes:<br/>[1] Standard Errors assume that the covariance matrix of the errors is correctly specified.<br/>[2] The condition number is large, 2.17e+08. This might indicate that there are<br/>strong multicollinearity or other numerical problems.
 
+----
+QQ Plot and Homoscedasticity
 
+-----
 
-
-
-    (<Figure size 360x360 with 1 Axes>,
-     <AxesSubplot:xlabel='Price', ylabel='Residual'>)
-
-
-
-Insert images here
-    
-![png](output_37_2.png)
-    
-
-Insert images here
-
-    
-![png](output_37_3.png)
-    
+<img src="./images/output_37_2.png" width=90%>
+<img src="./images/output_37_3.png" width=90%>
 
 
 ### Baseline Model Conclusion
@@ -167,8 +155,13 @@ Insert images here
 Explore adding new features to try and find significant relationships with price. Observe total rooms, living space compared to neighbors, and living space compared to lot size. Remake yr_renovated into a binary variable, either home has been renovated or it has not.
 
 -----
-Show some images of new features
- 
+<img src="./images/output_45_1.png" width=90%>
+<img src="./images/output_47_1.png" width=90%>
+<img src="./images/output_49_1.png" width=90%>
+<img src="./images/output_51_1.png" width=90%>
+<img src="./images/output_53_0.png" width=90%>
+
+
 EDA Results
 - Most of the data is right skewed
 - Supported by the mean being greater than the median
@@ -292,7 +285,13 @@ EDA Results
 </tr>
 </table><br/><br/>Notes:<br/>[1] Standard Errors assume that the covariance matrix of the errors is correctly specified.<br/>[2] The smallest eigenvalue is 9.7e-22. This might indicate that there are<br/>strong multicollinearity problems or that the design matrix is singular.
 
-Add image here
+----
+QQ Plot and Homoscedasticity
+
+-----
+
+<img src="./images/output_54_2.png" width=90%>
+<img src="./images/output_54_3.png" width=90%>
     
 
 
@@ -444,11 +443,15 @@ Add image here
 </tr>
 </table><br/><br/>Notes:<br/>[1] Standard Errors assume that the covariance matrix of the errors is correctly specified.<br/>[2] The smallest eigenvalue is 3.64e-24. This might indicate that there are<br/>strong multicollinearity problems or that the design matrix is singular.
 
+----
+QQ Plot and Homoscedasticity
 
+-----
 
+<img src="./images/output_73_2.png" width=90%>
+<img src="./images/output_73_3.png" width=90%>
 
-Image here
-
+---------
 
 ### Z-Score Outlier Removal Conclusion
 - Our R^2 dropped to 0.691
@@ -597,9 +600,13 @@ Image here
 </table><br/><br/>Notes:<br/>[1] Standard Errors assume that the covariance matrix of the errors is correctly specified.<br/>[2] The smallest eigenvalue is 8.49e-22. This might indicate that there are<br/>strong multicollinearity problems or that the design matrix is singular.
 
 
+----
+QQ Plot and Homoscedasticity
+
 -----
 
-images here
+<img src="./images/output_84_2.png" width=90%>
+<img src="./images/output_84_3.png" width=90%>
     
 -----
 
@@ -615,11 +622,8 @@ images here
 - Use One Hot Encodoing to treat these variables as categorical
 
 
-    
-image of floors
-    
- 
-image of condition
+<img src="./images/output_88_0.png" width=90%>
+<img src="./images/output_88_2.png" width=90%>
 
 
 
@@ -766,7 +770,8 @@ image of condition
 
 ---
 
-images here
+<img src="./images/output_100_2.png" width=90%>
+<img src="./images/output_100_3.png" width=90%>
     
 ---
 
@@ -783,10 +788,7 @@ images here
 - Independent variables cannot be collinear
 
 
-
-    
-![png](output_104_1.png)
-Show heatmat
+<img src="./images/output_104_1.png" width=90%>
 
 
 
@@ -905,15 +907,9 @@ has the lowest correlation with price
 </tr>
 </table><br/><br/>Notes:<br/>[1] Standard Errors assume that the covariance matrix of the errors is correctly specified.<br/>[2] The condition number is large, 2.17e+08. This might indicate that there are<br/>strong multicollinearity or other numerical problems.
 
-    
-![png](output_113_2.png)
-  image here 
+<img src="./images/output_113_2.png" width=90%>
 
-
-
-    
-![png](output_113_3.png)
-    image here
+<img src="./images/output_113_3.png" width=90%>
 
 ### Multicollinearity Conclusions
 - R^2 of 0.708
@@ -925,8 +921,7 @@ has the lowest correlation with price
 - Independent variables need to have a lineaer relationship with price
 
 -----
-show columsn that aren't linear
-show model and show images
+<img src="./images/Linearity Check.png" width=90%>
 
 -----
 
@@ -944,35 +939,22 @@ show model and show images
 - Overall unsasatisfied with model because of how limited it's scope was due to 37% of the data observations containing at least one outlier value
 - Z-score is less strict on classifying outliers our model can provide a wider range of inferences
 
-
-```python
-df_z = df_scaledz_orem.copy()
-df_z.drop('yr_renovated', axis=1, inplace=True)
-```
-
 ## Check for multicollinearity
 
 Not going to OHE the variables that were unsuccesful in IQR method
 
 ----
 
-- Show correlation triangle    
-![png](output_127_1.png)
-    
+<img src="./images/output_127_1.png" width=90%>  
 
-
-
-```
-Going to have to drop total_rooms, sqft_lot15, sqft_above, and sqft_living_15
-```
 
 
 ## Check for Linear Relationships
 - Total rooms and floors do not have a linear relationship with price
 
-  image here  
-![png](output_130_1.png)
-    
+-----
+
+<img src="./images/output_130_1.png" width=90%>    
 
 
 <table class="simpletable">
@@ -1082,25 +1064,14 @@ Going to have to drop total_rooms, sqft_lot15, sqft_above, and sqft_living_15
 </tr>
 </table><br/><br/>Notes:<br/>[1] Standard Errors assume that the covariance matrix of the errors is correctly specified.<br/>[2] The condition number is large, 2.11e+08. This might indicate that there are<br/>strong multicollinearity or other numerical problems.
 
+----
+QQ Plot and Homoscedasticity
+
+-----
 
 
-
-
-    (<Figure size 360x360 with 1 Axes>,
-     <AxesSubplot:xlabel='Price', ylabel='Residual'>)
-
-
-
-
-    
-![png](output_135_2.png)
-  image here  
-
-
-
-    
-![png](output_135_3.png)
-    image here
+<img src="./images/output_135_2.png" width=90%>  
+<img src="./images/output_135_3.png" width=90%>  
 
 
 ### Multicolinearity and Linearity Assumptions Conclusion
@@ -1111,35 +1082,14 @@ Going to have to drop total_rooms, sqft_lot15, sqft_above, and sqft_living_15
 
 ## Check for possible One Hot Encoded Variables
 
-    
-![png](output_140_0.png)
-    show image
 
-    
-![png](output_140_2.png)
-    show image
-
-    
-![png](output_140_4.png)
-    show image
-
-    
-![png](output_140_6.png)
-    show image
-
-
-![png](output_140_8.png)
-    show image
-
-
-    
-![png](output_140_10.png)
-    show image
-
-
-    
-![png](output_140_12.png)
-    show image
+<img src="./images/output_140_0.png" width=90%>  
+<img src="./images/output_140_2.png" width=90%>     
+<img src="./images/output_140_4.png" width=90%> 
+<img src="./images/output_140_6.png" width=90%> 
+<img src="./images/output_140_8.png" width=90%> 
+<img src="./images/output_140_10.png" width=90%> 
+<img src="./images/output_140_12.png" width=90%>  
 
 ------
 
@@ -1446,22 +1396,14 @@ All of ordinal variables except for floor have a linear relationship with price.
 
 
 
+----
+QQ Plot and Homoscedasticity
 
+-----
 
-    (<Figure size 360x360 with 1 Axes>,
-     <AxesSubplot:xlabel='Price', ylabel='Residual'>)
+<img src="./images/output_148_2.png" width=90%> 
 
-
-
-
-    
-![png](output_148_2.png)
-    image here
-
-
-    
-![png](output_148_3.png)
-    image here
+<img src="./images/output_148_3.png" width=90%> 
 
 
 ### Checking for Linearity Conclusion
@@ -1476,54 +1418,20 @@ All of ordinal variables except for floor have a linear relationship with price.
 ## Invididually check for homoskedacicity per feature
 
 
-```python
-X_z_zip2 = ['bedrooms', 'bathrooms', 'sqft_living',
-       'sqft_lot', 'floors', 'waterfront', 'view', 'condition', 'grade',
-       'basementyes', 'living_vs_neighbor',
-       'live_lot', 'renovated_yes']
-for col in X_z_zip2:
-    print(f'{col}-----------------')
-    sm.graphics.plot_regress_exog(model_zip, col,plt.figure(figsize=(12,8)))
-    plt.show()
-    print('----------------------')
-```
-
-  
+<img src="./images/output_151_5.png" width=90%> 
 
 
-    
-![png](output_151_5.png)
-show image
+<img src="./images/output_151_7.png" width=90%>    
 
+<img src="./images/output_151_21.png" width=90%> 
+<img src="./images/output_151_23.png" width=90%> 
 
-
-    
-![png](output_151_7.png)
-    
-
-
-
-
-
-    
-![png](output_151_21.png)
-    
-
-
-    ----------------------
-    live_lot-----------------
-show image
-
-
-    
-![png](output_151_23.png)
-    
 
 
 
 
 ```python
-# Sqft Lot, # live_lot are heteroscedasticstic
+Sqft Lot, live_lot are heteroskedasticistic
 ```
 
 
@@ -1821,25 +1729,14 @@ show image
 </tr>
 </table><br/><br/>Notes:<br/>[1] Standard Errors assume that the covariance matrix of the errors is correctly specified.
 
+----
+QQ Plot and Homoscedasticity
 
+-----
 
+<img src="./images/output_154_2.png" width=90%> 
 
-
-    (<Figure size 360x360 with 1 Axes>,
-     <AxesSubplot:xlabel='Price', ylabel='Residual'>)
-
-
-
-
-    
-![png](output_154_2.png)
-    image here
-
-
-
-    
-![png](output_154_3.png)
-    image here
+<img src="./images/output_154_3.png" width=90%> 
 
 
 ### Skedacicity Individual Conclusion:
@@ -1857,16 +1754,12 @@ show image
     Num observations removed:  1152
     Percent observations removed:  5.39%
     --------------------------------------------
-
-![png](output_162_1.png)
-show image    
-
-
     --------------------------------------------
     Max Home Price: 1120000.0
     Min Home Price: 78000.0
 
 ```
+<img src="./images/output_162_1.png" width=90%>  
 
 
 <table class="simpletable">
@@ -1988,25 +1881,14 @@ show image
 </tr>
 </table><br/><br/>Notes:<br/>[1] Standard Errors assume that the covariance matrix of the errors is correctly specified.<br/>[2] The smallest eigenvalue is 2.63e-22. This might indicate that there are<br/>strong multicollinearity problems or that the design matrix is singular.
 
+----
+QQ Plot and Homoscedasticity
 
+-----
 
+<img src="./images/output_165_2.png" width=90%> 
 
-
-    (<Figure size 360x360 with 1 Axes>,
-     <AxesSubplot:xlabel='Price', ylabel='Residual'>)
-
-
-
-
-    
-![png](output_165_2.png)
-    show image
-
-
-
-    
-![png](output_165_3.png)
-    show image
+<img src="./images/output_165_3.png" width=90%> 
 
 
 ### Baseline IQR Model Conclusion
@@ -2017,21 +1899,14 @@ show image
 
 ## Check for Multicollinearity
 
-=
 
-
-    
-![png](output_169_1.png)
-    show correlation triangle
-
+<img src="./images/output_169_1.png" width=90%> 
 
 
 ```
-Remove total_rooms, sqft_above
+Remove total_rooms and sqft_above
 
 ```
-
-
 
 <table class="simpletable">
 <caption>OLS Regression Results</caption>
@@ -2147,32 +2022,22 @@ Remove total_rooms, sqft_above
 </table><br/><br/>Notes:<br/>[1] Standard Errors assume that the covariance matrix of the errors is correctly specified.<br/>[2] The condition number is large, 2.19e+08. This might indicate that there are<br/>strong multicollinearity or other numerical problems.
 
 
+----
+QQ Plot and Homoscedasticity
 
+-----
 
+<img src="./images/output_175_2.png" width=90%> 
 
-    (<Figure size 360x360 with 1 Axes>,
-     <AxesSubplot:xlabel='Price', ylabel='Residual'>)
+<img src="./images/output_175_3.png" width=90%> 
 
-
-
-
-    
-![png](output_175_2.png)
-    show image
-
-
-    
-![png](output_175_3.png)
-    show image
 
 
 ## Check for assumptions of Linearity
 - Year built and sqft_lot do not have linear relationships with price
 
-    
-![png](output_178_0.png)
-    show image
 
+<img src="./images/output_178_0.png" width=90%> 
 
 
 <table class="simpletable">
@@ -2290,17 +2155,15 @@ Remove total_rooms, sqft_above
      <AxesSubplot:xlabel='Price', ylabel='Residual'>)
 
 
+----
+QQ Plot and Homoscedasticity
 
+-----
 
-    
-![png](output_181_2.png)
-    show image
+<img src="./images/output_181_2.png" width=90%> 
 
+<img src="./images/output_181_3.png" width=90%> 
 
-
-    
-![png](output_181_3.png)
-    show image
 
 
 ### Checking for assumptions conclusion
@@ -2620,28 +2483,14 @@ Remove total_rooms, sqft_above
 
 
 
+----
+QQ Plot and Homoscedasticity
 
+-----
 
-    (<Figure size 360x360 with 1 Axes>,
-     <AxesSubplot:xlabel='Price', ylabel='Residual'>)
+<img src="./images/output_188_2.png" width=90%> 
 
-
-
-
-    
-![png](output_188_2.png)
-    image here
-
-
-
-    
-![png](output_188_3.png)
-    image here
-
-
-``
-
-
+<img src="./images/output_188_3.png" width=90%> 
 
 
 ### Final Model Conclusion
@@ -2654,48 +2503,17 @@ Remove total_rooms, sqft_above
 
 
 
-    
-![png](output_205_0.png)
-    show image
-
-
-
-```python
-# Variables in the owners control
-
-show image
-![png](output_206_0.png)
-    
-
-
-## Additional Visualizations for Presentation
-
-
-```python
-# Plot Home prices over time
-df_price = df_iqr_zip2.copy()
-df_price = df_price.set_index('date')
-df_price = df_price.reset_index()
+<img src="./images/output_205_0.png" width=90%>     
 
 ```
-
-
-```python
-# Not using title because this is only going in PPT
-
-with plt.style.context('bmh'):
-    fig, ax = plt.subplots(figsize=(10,5))
-    sns.lineplot(data=df_price, x='date', y='price')
-
-    formatter = FuncFormatter(millions)
-    ax.yaxis.set_major_formatter(formatter)
-    ax.set_ylabel('Price ($)')
-    ax.set_xlabel('Date')
-
+Variables in the owners control
 ```
 
+<img src="./images/output_206_0.png" width=90%>    
 
-    
-![png](output_209_0.png)
-    show image
 
+<img src="./images/output_209_0.png" width=90%>
+
+```
+dsfasdf
+```
