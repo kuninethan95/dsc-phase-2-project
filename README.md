@@ -1,27 +1,27 @@
-# Title that recommends an action
-## Subtitle describing the analysis 
+# Kings County Housing Prices
+### Using multilinear regression to predict the price of homes and recommend to homeowners the best ways to increase their home value. 
 
-**Authors**: Student1, Student2, Student3
+**Authors**: Ethan Kunin
 
 The contents of this repository detail an analysis of the module one project. This analysis is detailed in hopes of making the work accessible and replicable.
 
 
-### Business problem: test
-fsfds
+### Business problem: 
 
-Here is where you state the business problem you were trying to solve
+
+King County home sales have been increasing as Seattle continues to grow. Top notch labor, and a favorable climate make King County a desirable place to live and work. Our real estate team has been tasked with advising clients on the best ways to increase their home value. This could mean renovation, expanding square footage, or other unique recommendations. We are also assisting them in determing a fair price for their home when they decide to put in on the market. 
 
 
 ### Data:
-Data can include source and high-level description (e.g. # obs)
+Data originates from Kaggle. 20,000+ rows and 20+ columns. CSV formatted. 
 
 
 ## Methods
-- descriptive analysis
-- choices made
-- key relevant findings from exploritory data analysis for mod 1, will be more involved in future mod
+- Scrubbed data to deal with duplicates and nulls
+- Eliminated outliers using either IQR method or Z-scores
+- Performed multiple multi-linear regression analyses to determine the most relevant features for determining a home's value. 
 
-## Results
+## Baseline Model was composed of no scaling or outlier removal. Assumptions have not been tested. 
 
 ### Here are examples of how to embed images from your sub-folder
 
