@@ -139,8 +139,8 @@ QQ Plot and Homoscedasticity
 
 -----
 
-<img src="./Images/output_37_2.png" width=90%>
-<img src="./Images/output_37_3.png" width=90%>
+<img src="./Images/output_37_2.png" width=50%>
+<img src="./Images/output_37_3.png" width=50%>
 
 
 ### Baseline Model Conclusion
