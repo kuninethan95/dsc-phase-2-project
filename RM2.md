@@ -5,7 +5,7 @@
 
 The contents of this repository detail an analysis of the module one project. This analysis is detailed in hopes of making the work accessible and replicable.
 
-<img src="./Images/KS_zips2.png" width=100%>
+<img src="./Images/KS_zips3.png" width=100%>
 
 ### Business problem: 
 
