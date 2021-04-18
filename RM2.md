@@ -155,11 +155,11 @@ QQ Plot and Homoscedasticity
 Explore adding new features to try and find significant relationships with price. Observe total rooms, living space compared to neighbors, and living space compared to lot size. Remake yr_renovated into a binary variable, either home has been renovated or it has not.
 
 -----
-<img src="./Images/output_45_1.png" width=90%>
-<img src="./Images/output_47_1.png" width=90%>
-<img src="./Images/output_49_1.png" width=90%>
-<img src="./Images/output_51_1.png" width=90%>
-<img src="./Images/output_53_0.png" width=90%>
+<img src="./Images/output_45_1.png" width=50%>
+<img src="./Images/output_47_1.png" width=50%>
+<img src="./Images/output_49_1.png" width=50%>
+<img src="./Images/output_51_1.png" width=50%>
+<img src="./Images/output_53_0.png" width=50%>
 
 
 EDA Results
@@ -290,8 +290,8 @@ QQ Plot and Homoscedasticity
 
 -----
 
-<img src="./Images/output_54_2.png" width=90%>
-<img src="./Images/output_54_3.png" width=90%>
+<img src="./Images/output_54_2.png" width=50%>
+<img src="./Images/output_54_3.png" width=50%>
     
 
 
@@ -448,8 +448,8 @@ QQ Plot and Homoscedasticity
 
 -----
 
-<img src="./Images/output_73_2.png" width=90%>
-<img src="./Images/output_73_3.png" width=90%>
+<img src="./Images/output_73_2.png" width=50%>
+<img src="./Images/output_73_3.png" width=50%>
 
 ---------
 
@@ -605,8 +605,8 @@ QQ Plot and Homoscedasticity
 
 -----
 
-<img src="./Images/output_84_2.png" width=90%>
-<img src="./Images/output_84_3.png" width=90%>
+<img src="./Images/output_84_2.png" width=50%>
+<img src="./Images/output_84_3.png" width=50%>
     
 -----
 
@@ -622,8 +622,8 @@ QQ Plot and Homoscedasticity
 - Use One Hot Encodoing to treat these variables as categorical
 
 
-<img src="./Images/output_88_0.png" width=90%>
-<img src="./Images/output_88_2.png" width=90%>
+<img src="./Images/output_88_0.png" width=50%>
+<img src="./Images/output_88_2.png" width=50%>
 
 
 
@@ -770,8 +770,8 @@ QQ Plot and Homoscedasticity
 
 ---
 
-<img src="./Images/output_100_2.png" width=90%>
-<img src="./Images/output_100_3.png" width=90%>
+<img src="./Images/output_100_2.png" width=50%>
+<img src="./Images/output_100_3.png" width=50%>
     
 ---
 
@@ -788,7 +788,7 @@ QQ Plot and Homoscedasticity
 - Independent variables cannot be collinear
 
 
-<img src="./Images/output_104_1.png" width=90%>
+<img src="./Images/output_104_1.png" width=50%>
 
 
 
@@ -907,9 +907,9 @@ has the lowest correlation with price
 </tr>
 </table><br/><br/>Notes:<br/>[1] Standard Errors assume that the covariance matrix of the errors is correctly specified.<br/>[2] The condition number is large, 2.17e+08. This might indicate that there are<br/>strong multicollinearity or other numerical problems.
 
-<img src="./Images/output_113_2.png" width=90%>
+<img src="./Images/output_113_2.png" width=50%>
 
-<img src="./Images/output_113_3.png" width=90%>
+<img src="./Images/output_113_3.png" width=50%>
 
 ### Multicollinearity Conclusions
 - R^2 of 0.708
@@ -954,7 +954,7 @@ Not going to OHE the variables that were unsuccesful in IQR method
 
 -----
 
-<img src="./Images/output_130_1.png" width=90%>    
+<img src="./Images/output_130_1.png" width=70%>    
 
 
 <table class="simpletable">
@@ -1070,8 +1070,8 @@ QQ Plot and Homoscedasticity
 -----
 
 
-<img src="./Images/output_135_2.png" width=90%>  
-<img src="./Images/output_135_3.png" width=90%>  
+<img src="./Images/output_135_2.png" width=50%>  
+<img src="./Images/output_135_3.png" width=50%>  
 
 
 ### Multicolinearity and Linearity Assumptions Conclusion
@@ -1083,13 +1083,13 @@ QQ Plot and Homoscedasticity
 ## Check for possible One Hot Encoded Variables
 
 
-<img src="./Images/output_140_0.png" width=90%>  
-<img src="./Images/output_140_2.png" width=90%>     
-<img src="./Images/output_140_4.png" width=90%> 
-<img src="./Images/output_140_6.png" width=90%> 
-<img src="./Images/output_140_8.png" width=90%> 
-<img src="./Images/output_140_10.png" width=90%> 
-<img src="./Images/output_140_12.png" width=90%>  
+<img src="./Images/output_140_0.png" width=70%>  
+<img src="./Images/output_140_2.png" width=70%>     
+<img src="./Images/output_140_4.png" width=70%> 
+<img src="./Images/output_140_6.png" width=70%> 
+<img src="./Images/output_140_8.png" width=70%> 
+<img src="./Images/output_140_10.png" width=70%> 
+<img src="./Images/output_140_12.png" width=70%>  
 
 ------
 
@@ -1401,9 +1401,9 @@ QQ Plot and Homoscedasticity
 
 -----
 
-<img src="./Images/output_148_2.png" width=90%> 
+<img src="./Images/output_148_2.png" width=50%> 
 
-<img src="./Images/output_148_3.png" width=90%> 
+<img src="./Images/output_148_3.png" width=50%> 
 
 
 ### Checking for Linearity Conclusion
@@ -1418,13 +1418,13 @@ QQ Plot and Homoscedasticity
 ## Invididually check for homoskedacicity per feature
 
 
-<img src="./Images/output_151_5.png" width=90%> 
+<img src="./Images/output_151_5.png" width=70%> 
 
 
-<img src="./Images/output_151_7.png" width=90%>    
+<img src="./Images/output_151_7.png" width=70%>    
 
-<img src="./Images/output_151_21.png" width=90%> 
-<img src="./Images/output_151_23.png" width=90%> 
+<img src="./Images/output_151_21.png" width=70%> 
+<img src="./Images/output_151_23.png" width=70%> 
 
 
 
@@ -1734,9 +1734,9 @@ QQ Plot and Homoscedasticity
 
 -----
 
-<img src="./Images/output_154_2.png" width=90%> 
+<img src="./Images/output_154_2.png" width=50%> 
 
-<img src="./Images/output_154_3.png" width=90%> 
+<img src="./Images/output_154_3.png" width=50%> 
 
 
 ### Skedacicity Individual Conclusion:
@@ -1759,7 +1759,7 @@ QQ Plot and Homoscedasticity
     Min Home Price: 78000.0
 
 ```
-<img src="./Images/output_162_1.png" width=90%>  
+<img src="./Images/output_162_1.png" width=70%>  
 
 
 <table class="simpletable">
@@ -1886,9 +1886,9 @@ QQ Plot and Homoscedasticity
 
 -----
 
-<img src="./Images/output_165_2.png" width=90%> 
+<img src="./Images/output_165_2.png" width=50%> 
 
-<img src="./Images/output_165_3.png" width=90%> 
+<img src="./Images/output_165_3.png" width=50%> 
 
 
 ### Baseline IQR Model Conclusion
@@ -2027,9 +2027,9 @@ QQ Plot and Homoscedasticity
 
 -----
 
-<img src="./Images/output_175_2.png" width=90%> 
+<img src="./Images/output_175_2.png" width=50%> 
 
-<img src="./Images/output_175_3.png" width=90%> 
+<img src="./Images/output_175_3.png" width=50%> 
 
 
 
@@ -2160,9 +2160,9 @@ QQ Plot and Homoscedasticity
 
 -----
 
-<img src="./Images/output_181_2.png" width=90%> 
+<img src="./Images/output_181_2.png" width=50%> 
 
-<img src="./Images/output_181_3.png" width=90%> 
+<img src="./Images/output_181_3.png" width=50%> 
 
 
 
@@ -2488,9 +2488,9 @@ QQ Plot and Homoscedasticity
 
 -----
 
-<img src="./Images/output_188_2.png" width=90%> 
+<img src="./Images/output_188_2.png" width=50%> 
 
-<img src="./Images/output_188_3.png" width=90%> 
+<img src="./Images/output_188_3.png" width=50%> 
 
 
 ### Final Model Conclusion
@@ -2509,10 +2509,10 @@ QQ Plot and Homoscedasticity
 Variables in the owners control
 ```
 
-<img src="./Images/output_206_0.png" width=90%>    
+<img src="./Images/output_206_0.png" width=70%>    
 
 
-<img src="./Images/output_209_0.png" width=90%>
+<img src="./Images/output_209_0.png" width=70%>
 
 ```
 dsfasdf
