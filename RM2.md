@@ -5,11 +5,12 @@
 
 The contents of this repository detail an analysis of the module one project. This analysis is detailed in hopes of making the work accessible and replicable.
 
+<img src="./Images/KS_zips2.png" width=100%>
 
 ### Business problem: 
 
 
-King County home sales have been increasing as Seattle continues to grow. Top notch labor, and a favorable climate make King County a desirable place to live and work. Our real estate team has been tasked with advising clients on the best ways to increase their home value. This could mean renovation, expanding square footage, or other unique recommendations. We are also assisting them in determing a fair price for their home when they decide to put in on the market. 
+King County home sales have been increasing as Seattle continues to grow. Top notch labor and a favorable climate make King County a desirable place to live and work. Our real estate team has been tasked with advising clients on the best ways to increase their home value. This could mean renovation, expanding square footage, or other unique recommendations. We are also assisting them in determing a fair price for their home when they decide to put in on the market. 
 
 
 ### Data:
@@ -1759,7 +1760,7 @@ QQ Plot and Homoscedasticity
     Min Home Price: 78000.0
 
 ```
-<img src="./Images/output_162_1.png" width=70%>  
+<img src="./Images/output_162_1.png" width=50%>  
 
 
 <table class="simpletable">
@@ -2498,12 +2499,12 @@ QQ Plot and Homoscedasticity
 - All assumptions have been met
 - Using 20,235 observations
 
-## Final Visuals
+## Concluding Visuals
 
 
 
 
-<img src="./Images/output_205_0.png" width=90%>     
+<img src="./Images/output_205_0.png" width=60%>     
 
 ```
 Variables in the owners control
@@ -2515,5 +2516,5 @@ Variables in the owners control
 <img src="./Images/output_209_0.png" width=70%>
 
 ```
-dsfasdf
+Location is the most impactful dependent variable. After comes waterfront, sqft_living vs neighborhood average, if the home has been renovated, and grade given by city coucil. Lot, basement, and bedrooms have a negative relationship with price.
 ```
