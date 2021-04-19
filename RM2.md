@@ -8,12 +8,14 @@
 
 ### Business problem: 
 
-```
+
 King County home sales have been increasing as Seattle continues to grow. Top notch labor and a favorable climate make King County a desirable place to live and work. Our real estate team has been tasked with advising clients on the best ways to increase their home value. This could mean renovation, expanding square footage, or other unique recommendations. We are also assisting them in predicting a fair price for their home based on its existing characteristics. 
-```
+
 
 ### Data:
-Data originates from Kaggle. 20,000+ rows and 20+ columns. CSV formatted. 
+-Data originates from Kaggle
+-20,000+ rows and 20+ columns
+-CSV formatted. 
 
 
 ## Methods
@@ -25,6 +27,7 @@ Data originates from Kaggle. 20,000+ rows and 20+ columns. CSV formatted.
 
 ## Baseline Model
 -Using all columns as independent variables and targeting price
+- Only preprocessing is duplicate and null handling
 
 
 <table class="simpletable">
@@ -147,15 +150,14 @@ QQ Plot and Homoscedasticity
 - R^2 is 0.70
 - QQ Plot deviates significantly around the 3rd quantile
 - Floors and basement are not statistically significant
-- Residuals trail off around $1.5 million, begins to become cone shaped
+- Residuals trail off around $1.25 million, begins to become cone shaped and skew upwards
 - Model not meet assumption of homoscedasticity
 
 
 ## EDA/New Feature Model
+-----
 
-```
-Explore adding new features to try and find significant relationships with price. Observe total rooms, living space compared to neighbors, and living space compared to lot size. Remake yr_renovated into a binary variable, either home has been renovated or it has not.
-```
+Explore adding new features to try and find significant relationships with price. Observe total rooms, living space compared to neighbors, lot space compared to neighbors, and living space compared to lot size. Remake yr_renovated into a binary variable, either home has been renovated or it has not.
 
 -----
 <img src="./Images/output_45_1.png" width=50%>
@@ -168,6 +170,7 @@ Explore adding new features to try and find significant relationships with price
 EDA Results
 - Most of the data is right skewed
 - Supported by the mean being greater than the median
+- Homes with a basement have a greater mean price than those that do not
 
 ----------
 
@@ -301,29 +304,30 @@ QQ Plot and Homoscedasticity
 ### New Feature Model Conclusion
 - R^2 imporved to 0.71
 - Basementyes and lot_vs_neighbor are statistically insignificant
+- QQ plot deviates significantly around the second quantile
 - Does not meet assumption of homoscedasticity
-- Next step should be to remove outliers and run tests again
+- Next step should be to remove outliers and rerun tests
 
 ------
 
 ## Z-Score Outlier Removal
-- Removing Z-Scores may address issue of heteroskedacicity
-- It will also reduce right skew because values on the tails will be removed
+- Removing outliers based on Z-Scores may address issue of heteroskedacicity
+- It will reduce right skew because values on the tails will be removed
 - Begin by testing Z-Score removal for all features, including price
-- Conclusions will not be adjusted simply because data is scaled
+- Conclusions will not be adjusted simply because data is scaled, removing outliers will alter results
 
 
 --------
 
 
     Num observations before dropping with Z-score: 21387
-    ----Dropping all rows where an outlier occurrs accross columns----
+    ----Dropping all rows where an outlier occurrs in at least one column----
     Num observations after dropping with Z-score: 18739
     Num observations removed: 2648 
     Num observations removed as percent of original DF: 12.38%
     
-    Max price observation: 1640000.0
-    Min price observation: 82500.0
+    Max price observation: $1,640,000.0
+    Min price observation: $82,500.0
 
 
 
@@ -457,16 +461,17 @@ QQ Plot and Homoscedasticity
 ---------
 
 ### Z-Score Outlier Removal Conclusion
-- Our R^2 dropped to 0.691
-- QQ plot is more normal
-- Sqft_lot, floors, sqft_lot15 are insignificant
-- Does not achieve homoscedasticity
+- R^2 dropped to 0.691
+- QQ plot is more normal, deviates at second quantile but to a lesser degree
+- Negative quantiles are more nromal
+- Sqft_lot, floors, sqft_lot15 are statistically insignificant
+- Does not pass assumption of homoscedasticity
 -----
 
 ## IQR Outlier Removal
-- Checking if IQR outlier removal does a better job at normalizing QQ plot and achieving homoscedasticity
-- Use IQR outlier removal on all columns inititially
-- IQR will eliminate more values because it more strict at classifying outliers
+- Checking if IQR outlier removal does a better job at normalizing QQ plot and passing assumption of homoscedasticity
+- Begin by classifying observation as an outlier if at least one column is considered an outlier
+- IQR method will eliminate more values because it is more strict at classifying outliers
 
 
 ---
@@ -477,8 +482,8 @@ QQ Plot and Homoscedasticity
     Num observations removed: 7998
     Num observations removed as percent of original DF: 0.37%
 
-    Max price outliers removed: 1120000.0
-    Min price outliers removed: 81000.0
+    Max price outliers removed: $1,120,000.0
+    Min price outliers removed: $81,000.0
 ```
 
 
@@ -617,13 +622,14 @@ QQ Plot and Homoscedasticity
 
 ### IQR Outlier Removal Conclusion
 - R^2 has increased to 0.71
-- sqft_lot15 and living_vs_neighbor are insignificant
-- QQ plot is significantly more normal. Small peak towards 2nd quantile
+- Living_vs_neighbor is statistically insignificant
+- QQ plot is significantly more normal. Small deviation around the 2nd quantile
 - Homoscedasticity has improved because more outlier variables have been removed
-- This model meets more assumptions but a significant number of values have been dropped (37%). This narrows the scope of possible inferences
+- This model meets more assumptions but a significant number of values have been dropped (37%). This narrows the scope of the models inferential capabilities as shown by min/max prices
+- It also narrows the scope of inference accross all features
 
 ## Explore OHE Orindal Variables
-- Identifying ordinal variables that do not have a linear relationship with price
+- Identifying ordinal variables that may not have a linear relationship with price
 - Use One Hot Encodoing to treat these variables as categorical variables
 
 
@@ -780,9 +786,10 @@ Floor and condition do not have strong linear relationships with price
 
 ### OHE Ordinal Conclusion
 - R^2 of 0.71
-- Majority of the OHE variables are not statistically significant so they can be dropped
+- Majority of the OHE variables are not statistically significant so should be dropped
+- Floor and condition had more statistical significance as numeric variables
 - QQ plot looks normal
-- Homoscedasticity looks like it has been met
+- Assumption homoscedasticity appears to have been met
 
 ------
 
@@ -791,15 +798,14 @@ Floor and condition do not have strong linear relationships with price
 - Independent variables cannot be collinear
 
 
-<img src="./Images/output_104_1.png" width=50%>
+<img src="./Images/output_104_1.png" width=75%>
 
 
 ```
-Methodology is to check each pair for correlation with price and drop the feature that 
-has the lowest correlation with price
+Methodology is to check each pair that has a correlations of at least 75% for correlation with price and drop the feature that has the lower correlation with price
 
 - DROP - sqft_lot15
-- DROP - total rooms because it takes away from nuance      of bath/bed
+- DROP - total rooms because it takes away from nuance of bath/bed
 - DROP - sqft_above
 - DROP - sqft_living_15
 ```
@@ -919,32 +925,32 @@ has the lowest correlation with price
 - R^2 of 0.708
 - QQ plot meets assumptions
 - No features with insignificant p-values
-- Homoscedasticity meets assumptions
+- Homoscedasticity passes assumptions
 ----
 ## Check Assumption of Linearity
-- Independent variables need to have a lineaer relationship with price
+- Independent variables must have a lineaer relationship with price
 
 -----
 <img src="./Images/Linearity Check.png" width=90%>
 
 -----
 
+<img src="./Images/lincheck.png" width=90%>  
 
 ### Linearity Conclusion
 - R^2 has dropped to 0.67
 - No insignificant p-values
 - QQ plot looks normal
 - Sked looks normal
-- One of the features we dropped must have had a significant impact on our target variable
+- One of the features dropped may have had a significant impact on our target variable because the R^2 has been reduced
 
 ## Pivoting Back to Z-Score
 
-```
-- R^2 was reduced
-- Testing if I can achieve similar results and drop less data
-- Overall unsasatisfied with model because of how limited it's scope was due to 37% of the data observations containing at least one outlier value
-- Z-score is less strict on classifying outliers our model can provide a wider range of inferences
-```
+-----
+- Testing if similar results can be achieved while dropping less data
+- Overall, unsasatisfied with model because of its limited scope. This was was due to 37% of the data observations being considered outliers data and dropped
+- Z-score is less strict on classifying outliers so the model can provide a wider range of inferences
+-----
 
 ## Check for multicollinearity
 
@@ -960,7 +966,7 @@ Not going to OHE the variables that were unsuccesful in IQR method
 
 
 ## Check for Linear Relationships
-- Total rooms and floors do not have a linear relationship with price
+- Total rooms does not have a linear relationship with price
 
 -----
 
@@ -1085,10 +1091,10 @@ QQ Plot and Homoscedasticity
 
 
 ### Multicolinearity and Linearity Assumptions Conclusion
-- R^2 is 68.8
+- R^2 of 0.69
 - No statistically insignificant features but floors, basement, and sqft loss are close to threshold
 - QQ possibly meets assumptions but veers up at the 2nd quantile
-- Skedacity vears upward as home prices surpass $1,000,000
+- Skedacity vears upward as home prices surpass $1,2050,000
 
 ## Check for possible One Hot Encoded Variables
 
@@ -1103,9 +1109,9 @@ QQ Plot and Homoscedasticity
 
 ------
 
-```
+
 All ordinal variables except for floor have a linear relationship with price. Testing zip code as a categorical variable
-```
+
 
 ----------
 
@@ -1419,13 +1425,13 @@ QQ Plot and Homoscedasticity
 
 
 ### Checking for Linearity Conclusion
-- When adding zipcode, R^2 moves up to 0.834
+- When adding zipcode as a categorical variable, R^2 increases up to 0.834
 - Floors are statistically insignificant
 - Tried OHE and they came back as majority insignificant
 - Dropped floors because no linear relationship
 - Some zip codes were statistically insignificant but not enough to drop the variables
 - QQ plot trails off 2 quantile
-- Homoscedasticity breaks down around $1,000,000
+- Homoscedasticity breaks down around $1,250,000
 
 ## Invididually check for homoskedacicity per feature
 
@@ -1753,11 +1759,13 @@ QQ Plot and Homoscedasticity
 
 ### Skedacicity Individual Conclusion:
 - It has not changed much
+- Dropping individual features did nto solve problem of heteroscedasticity
 - Concern is that too much data has been dropped which narrows the scope of the models inference capabilities
 
 ## Going back to IQR because of heteroscedasticity
 - IQR method is more strict towards removing outliers
 - Using IQR method but only eliminiting observations based on price outliers 
+- Able to provide inferences for more homes and wider range of home prices
 
 ```
 
@@ -1767,8 +1775,8 @@ QQ Plot and Homoscedasticity
     Percent observations removed:  5.39%
     --------------------------------------------
     --------------------------------------------
-    Max Home Price: 1120000.0
-    Min Home Price: 78000.0
+    Max Home Price: $1,120,000.0
+    Min Home Price: $78,000.0
 
 ```
 <img src="./Images/output_162_1.png" width=50%>  
@@ -1907,7 +1915,7 @@ QQ Plot and Homoscedasticity
 -  R^2 0.71 
 - Homoskedacicity assumption is met
 - QQ model shows very few values tailing off, only past 2.5 quantiles
-- Assumptions are better met than when using Z-Score outlier removal
+- Assumptions are better met than when using Z-Score outlier removal, especially homoskedacicity
 
 ## Check for Multicollinearity
 
@@ -2522,6 +2530,9 @@ Variables in the owners control
 
 <img src="./Images/output_209_0.png" width=70%>
 
-```
-Location is the most impactful dependent variable. After comes waterfront, sqft_living vs neighborhood average, if the home has been renovated, and grade given by city coucil. Lot, basement, and bedrooms have a negative relationship with price.
-```
+
+Zipcode, a proxy for location, is the most impactful independent variable. After comes waterfront, sqft_living vs neighborhood average, if the home has been renovated, and grade given by city coucil. Live vs. lot, basement, and bedrooms have a negative relationship with price. Home prices tend to be erratic in terms of month of sale, at least for 2014-2015
+
+In conclusion, we have deloped a model for the real estate team that can infer home value for houses within a price range of $78,000 - $1,120,000. 
+
+Will recommend to home owners who are trying to improve their home value that they should add a waterfront view if possible. If they are in proximity to water, consider adding windwows to enhance the view. Peform some sort of renovation, and have a high grade, view, and condition. A basement will reduce home value and the larger the proportion of the home to the total lot, the lower the price of the home. 
