@@ -631,7 +631,7 @@ QQ Plot and Homoscedasticity
 
 ## Final Thoughts
 
-<img src="./Images/output_205_0.png" width=60%>     
+<img src="./Images/coeff_updated.png" width=60%>     
 
 ```
 Variables in the owners control
@@ -657,7 +657,7 @@ For a 1 Standard Deviation increase per each feature. The impace is as follows:
 - Basement: -$16,074
 - Bedrooms: -$5,161
 
-<img src="./Images/most_exp_zips.png" width=70%>
+<img src="./Images/top_10_2.png" width=70%>
 
 ------
 
