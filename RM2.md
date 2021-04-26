@@ -2168,13 +2168,6 @@ QQ Plot and Homoscedasticity
 </table><br/><br/>Notes:<br/>[1] Standard Errors assume that the covariance matrix of the errors is correctly specified.<br/>[2] The condition number is large, 2.02e+08. This might indicate that there are<br/>strong multicollinearity or other numerical problems.
 
 
-
-
-
-    (<Figure size 360x360 with 1 Axes>,
-     <AxesSubplot:xlabel='Price', ylabel='Residual'>)
-
-
 ----
 QQ Plot and Homoscedasticity
 
