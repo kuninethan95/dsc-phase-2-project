@@ -9,13 +9,15 @@
 ### Business problem: 
 
 
-King County home sales have been increasing as Seattle continues to grow. Top notch labor and a favorable climate make King County a desirable place to live and work. Our real estate team has been tasked with advising clients on the best ways to increase their home value. This could mean renovation, expanding square footage, or other unique recommendations. We are also assisting them in predicting a fair price for their home based on its existing characteristics. 
+King County home sales have been increasing as Seattle continues to grow. Top notch labor and a favorable climate make King County a desirable place to live and work. Our real estate team has been tasked with advising clients on the best ways to increase their home value. This can include renovation, expanding square footage, or improving the home condition. We are also assisting them in predicting a fair price for their home based on its existing characteristics. 
 
 
 ### Data:
 -Data originates from Kaggle
+
 -20,000+ rows and 20+ columns
--CSV formatted. 
+
+-CSV formatted
 
 
 ## Methods
@@ -170,7 +172,7 @@ Explore adding new features to try and find significant relationships with price
 EDA Results
 - Most of the data is right skewed
 - Supported by the mean being greater than the median
-- Homes with a basement have a greater mean price than those that do not
+- Homes which have been renovated have a greater mean price than those that have not
 
 ----------
 
@@ -320,10 +322,10 @@ QQ Plot and Homoscedasticity
 --------
 
 
-    Num observations before dropping with Z-score: 21387
+    Num observations before dropping with Z-score: 21,387
     ----Dropping all rows where an outlier occurrs in at least one column----
-    Num observations after dropping with Z-score: 18739
-    Num observations removed: 2648 
+    Num observations after dropping with Z-score: 18,739
+    Num observations removed: 2,648 
     Num observations removed as percent of original DF: 12.38%
     
     Max price observation: $1,640,000.0
@@ -477,9 +479,9 @@ QQ Plot and Homoscedasticity
 ---
 
 ```
-    Num observations before dropping with IQR: 21387
-    Num observations after dropping with IQR: 13389
-    Num observations removed: 7998
+    Num observations before dropping with IQR: 21,387
+    Num observations after dropping with IQR: 13,389
+    Num observations removed: 7,998
     Num observations removed as percent of original DF: 0.37%
 
     Max price outliers removed: $1,120,000.0
@@ -623,7 +625,7 @@ QQ Plot and Homoscedasticity
 ### IQR Outlier Removal Conclusion
 - R^2 has increased to 0.71
 - Living_vs_neighbor is statistically insignificant
-- QQ plot is significantly more normal. Small deviation around the 2nd quantile
+- QQ plot better meets assumptions. Small deviation around the 2nd quantile
 - Homoscedasticity has improved because more outlier variables have been removed
 - This model meets more assumptions but a significant number of values have been dropped (37%). This narrows the scope of the models inferential capabilities as shown by min/max prices
 - It also narrows the scope of inference accross all features
@@ -1427,8 +1429,6 @@ QQ Plot and Homoscedasticity
 ### Checking for Linearity Conclusion
 - When adding zipcode as a categorical variable, R^2 increases up to 0.834
 - Floors are statistically insignificant
-- Tried OHE and they came back as majority insignificant
-- Dropped floors because no linear relationship
 - Some zip codes were statistically insignificant but not enough to drop the variables
 - QQ plot trails off 2 quantile
 - Homoscedasticity breaks down around $1,250,000
@@ -1758,20 +1758,20 @@ QQ Plot and Homoscedasticity
 
 
 ### Skedacicity Individual Conclusion:
-- It has not changed much
-- Dropping individual features did nto solve problem of heteroscedasticity
-- Concern is that too much data has been dropped which narrows the scope of the models inference capabilities
+- Small change
+- Dropping individual features did not solve problem of heteroscedasticity
+
 
 ## Going back to IQR because of heteroscedasticity
 - IQR method is more strict towards removing outliers
 - Using IQR method but only eliminiting observations based on price outliers 
-- Able to provide inferences for more homes and wider range of home prices
+- Able to provide inferences for more types of homes and wider range of home prices
 
 ```
 
-    Num observations before removal: 21387
-    Num observations after removal:  20235
-    Num observations removed:  1152
+    Num observations before removal: 21,387
+    Num observations after removal:  20,235
+    Num observations removed:  1,152
     Percent observations removed:  5.39%
     --------------------------------------------
     --------------------------------------------
@@ -1916,6 +1916,7 @@ QQ Plot and Homoscedasticity
 - Homoskedacicity assumption is met
 - QQ model shows very few values tailing off, only past 2.5 quantiles
 - Assumptions are better met than when using Z-Score outlier removal, especially homoskedacicity
+- Assumptions are better met because the appropriate outliers have been removed
 
 ## Check for Multicollinearity
 
@@ -2531,8 +2532,10 @@ Variables in the owners control
 <img src="./Images/output_209_0.png" width=70%>
 
 
-Zipcode, a proxy for location, is the most impactful independent variable. After comes waterfront, sqft_living vs neighborhood average, if the home has been renovated, and grade given by city coucil. Live vs. lot, basement, and bedrooms have a negative relationship with price. Home prices tend to be erratic in terms of month of sale, at least for 2014-2015
+Zip code, a proxy for location, is the most impactful independent variable. After comes waterfront, sqft_living vs neighborhood average, if the home has been renovated, and grade given by city coucil. Live vs. lot, basement, and bedrooms have a negative relationship with price. Home prices tend to be erratic in terms of month of sale, at least for 2014-2015
 
 In conclusion, we have deloped a model for the real estate team that can infer home value for houses within a price range of $78,000 - $1,120,000. 
 
 Will recommend to home owners who are trying to improve their home value that they should add a waterfront view if possible. If they are in proximity to water, consider adding windwows to enhance the view. Peform some sort of renovation, and have a high grade, view, and condition. A basement will reduce home value and the larger the proportion of the home to the total lot, the lower the price of the home. 
+
+This model is designed to infer a home's price based on existing conditions, not predict the value of the home in the future. 
