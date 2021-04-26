@@ -2057,7 +2057,7 @@ QQ Plot and Homoscedasticity
 - Year built and sqft_lot do not have linear relationships with price
 
 
-<img src="./Images/output_178_0.png" width=90%> 
+<img src="./Images/lincheck3.png" width=90%> 
 
 
 <table class="simpletable">
