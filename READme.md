@@ -634,7 +634,7 @@ QQ Plot and Homoscedasticity
 <img src="./Images/coeffs3ic.png" width=60%>     
 
 ```
-Variables in the owners control
+Highly impactful features
 ```
 
 <img src="./Images/output_206_0.png" width=70%>   
