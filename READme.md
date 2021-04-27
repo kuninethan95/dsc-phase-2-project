@@ -27,6 +27,8 @@ The model also guides clients on which features to prioritize for increasing hom
 - Eliminated outliers using either IQR method or Z-scores
 - Performed multiple multilinear regression analyses to determine the most relevant features for inferring a home's value
 - Provided accompanying visualizations
+- Share iterations of how the model reached it's final and most accurate form
+- Illustrate and interpret the results of the model
 
 
 
@@ -116,7 +118,7 @@ EDA Results
     Num observations before dropping with IQR: 21,387
     Num observations after dropping with IQR: 13,389
     Num observations removed: 7,998
-    Num observations removed as percent of original DF: 0.37%
+    Num observations removed as percent of original DF: 37.0%
 
     Max price outliers removed: $1,120,000.0
     Min price outliers removed: $81,000.0
@@ -201,7 +203,7 @@ Floor and condition do not have strong linear relationships with price
 - Testing if similar results can be achieved while dropping less data
 - Overall, unsasatisfied with model because of its limited scope. This was was due to 37% of the data observations being considered outliers data and dropped
 - Too much data loss to be able to provide accurate inferences for a wide range of clientele 
-- Z-score is less strict on classifying outliers so the model can provide a wider range of inferences
+- Z-score is less strict on classifying outliers so the model can provide a wider range of inferences across all features
 -----
 
 ## Check for multicollinearity
@@ -671,3 +673,5 @@ In conclusion, we have deloped a model for the real estate team that can infer h
 Will recommend to home owners who are trying to improve their home value that they should add a waterfront view if possible. If they are in proximity to water, consider adding windwows to enhance the view. Peform some sort of renovation, and have a high grade, view, and condition. A basement will reduce home value and the larger the proportion of the home to the total lot, the lower the price of the home. 
 
 This model is designed to infer a home's price based on existing conditions, not predict the value of the home in the future. 
+
+For further questions email kunin.ethan95@gmail.com
