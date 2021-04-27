@@ -675,3 +675,4 @@ Will recommend to home owners who are trying to improve their home value that th
 This model is designed to infer a home's price based on existing conditions, not predict the value of the home in the future. 
 
 For further questions email kunin.ethan95@gmail.com
+and see accompanying [Juypter Notebook](https://github.com/kuninethan95/dsc-phase-2-project/blob/main/OSEMN%20FinalNB.ipynb)
