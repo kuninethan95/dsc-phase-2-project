@@ -1,5 +1,5 @@
 # Kings County Housing Prices
-### Using multilinear regression models to infer the price of homes based on their existing characteristics. 
+### Using multiple linear regression analysis models to infer the price of homes based on their existing characteristics. 
 
 **Authors**: Ethan Kunin
 
