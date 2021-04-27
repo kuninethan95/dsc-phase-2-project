@@ -631,7 +631,7 @@ QQ Plot and Homoscedasticity
 
 ## Final Thoughts
 
-<img src="./Images/coeff_updated.png" width=60%>     
+<img src="./Images/coeffs3ic.png" width=60%>     
 
 ```
 Variables in the owners control
