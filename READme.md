@@ -65,7 +65,7 @@ EDA Results
 <img src="./Images/lincheck_rm.png" width=100%>
 
 **Conclusion:**
-- Will be dropping: Sqft_lot, Yr_built, sqft_lot15, and live_lot are numeric
+- Will be dropping: Sqft_lot, Yr_built, sqft_lot15, and live_lot (all continuous)
 - Will be One Hot Encoding: Floors, zipcode, and bedrooms
 ------
 
@@ -147,13 +147,13 @@ This is because they do not appear ordinal. In other words, as the value of the 
 
 - As we can see, the 15 most impactful predictor variables are all zipcodes. With respect to the intercept, some of the zipcodes can explain ~$600,000 in price.
 
-- 98039, 98004, and 98112 are the top 3 most expensive zip codes. These zips may be closest to downtown Seattle. Check that later
+- 98039, 98004, and 98112 are the top 3 most expensive zip codes. 
 
-- Almost all zipcodes are statistically significant as we can see they have a major impact on price
+- Almost all zip codes are statistically significant as we can see they have a major impact on price
 
 <img src="./Images/most_zips_rm.png" width=50%>
 
-The median home price in King County is \\$439,000. The top 10 most expensive zipcodes exceed that value by a minimum of ~\\$250,000 up to ~ $450,000. The most expensive zip codes tend to be situated around urban Seattle. 
+The median home price in King County is \$439,000. The top 10 most expensive zipcodes exceed that value by a minimum of ~\$250,000 up to ~ $450,000. The most expensive zip codes tend to be situated around urban Seattle. 
 
 ### Evaluating Non Location Independent Variables
 
