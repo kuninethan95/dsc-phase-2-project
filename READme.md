@@ -62,7 +62,7 @@ EDA Results
 - Must check each predictor that we are we going to include in the model
 
 
-<img src="./Images/lincheck_Rm.png" width=100%>
+<img src="./Images/lincheck_rm.png" width=100%>
 
 **Conclusion:**
 - Will be dropping: Sqft_lot, Yr_built, sqft_lot15, and live_lot are numeric
